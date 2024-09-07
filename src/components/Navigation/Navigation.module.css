@@ -1,0 +1,46 @@
+.Navigation {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: #3b0000;
+  color: #fff4f4;
+  font-size: 24px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px
+}
+
+.Navigation a {
+  color: #fff4f4;
+  text-decoration: none;
+}
+
+.Navigation a:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #fff4f4;
+  transition: width 0.3s;
+}
+
+.Navigation a.active {
+  color: #d4c0c0;
+}
+
+.Navigation a.active::after {
+  width: 100%;
+  background-color: #d4c0c0;
+}
+
+.Navigation a:hover {
+  color: #fff4f4;
+}
+
+.Navigation a:hover::after {
+  width: 100%;
+  background-color: #fff4f4;
+}

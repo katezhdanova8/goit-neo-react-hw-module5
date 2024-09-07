@@ -1,0 +1,52 @@
+.MovieDetailsCard {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+}
+
+.MovieDetailsCard h2 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+
+.MovieDetailsCardInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.MovieDetailsCard h1 {
+  margin: 0;
+  font-size: 30px
+}
+
+.MovieDetailsCardImage {
+  width: 400px;
+  object-fit: cover;
+}
+
+.MovieDetailsCardFlexWrapper {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.MovieDetailsCardRating {
+  color: #8b8a8a;
+}
+
+.MovieDetailsCardRelease img,
+.MovieDetailsCardHomepage img {
+  width: 16px;
+  height: 16px;
+}
+
+.MovieDetailsCardHomepage a {
+  text-decoration: none;
+  color: #333;
+}
+
+.MovieDetailsCardHomepage a:hover {
+  text-decoration: underline;
+}

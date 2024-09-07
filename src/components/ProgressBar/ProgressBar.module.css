@@ -1,0 +1,36 @@
+.ProgressBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #333;
+}
+
+.ProgressBar svg {
+  --progress: 0;
+  --size: 20px;
+  --half-size: calc(var(--size) / 2);
+  --stroke-width: 4px;
+  --radius: calc((var(--size) - var(--stroke-width)) / 2);
+  --circumference: calc(var(--radius) * pi * 2);
+  --dash: calc((var(--progress) * var(--circumference)) / 100);
+}
+
+.ProgressBar svg circle {
+  cx: var(--half-size);
+  cy: var(--half-size);
+  r: var(--radius);
+  stroke-width: var(--stroke-width);
+  fill: none;
+  stroke-linecap: round;
+}
+
+.ProgressBar svg circle.ProgressBar__border {
+  stroke: #f0f0f0;
+}
+
+.ProgressBar svg circle.ProgressBar__progress {
+  transform: rotate(-90deg) rotate(0deg) scale(1, -1);
+  transform-origin: var(--half-size) var(--half-size);
+  stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+  stroke: var(--color)
+}

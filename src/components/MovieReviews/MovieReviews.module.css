@@ -1,0 +1,47 @@
+.MovieReviews {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.MovieReviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.MovieReview {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.MovieReviewDates {
+  display: flex;
+  gap: 20px;
+  color: #969696;
+}
+
+.MovieReviewDates p {
+  margin: 0;
+}
+
+.MovieReviewDates span {
+  font-weight: 700;
+}
+
+.MovieReviewAuthor {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.MovieReviewRating {
+  color: #969696;
+}
+
+.MovieReviewAuthor img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}

@@ -1,0 +1,64 @@
+.MovieCard {
+  width: 250px;
+  padding: 20px;
+  border: 1px solid #3b0000;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.MovieCard:hover .MovieCardImage {
+  transform: scale(1.1);  
+}
+
+.MovieCard a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.MovieCard h2 {
+  --font-size: 18px;
+  --line-height: 1.2;
+  --line-clamp: 2;
+  margin: 0;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp);
+  line-clamp: var(--line-clamp);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: calc(var(--font-size) * var(--line-clamp) * var(--line-height));
+}
+
+.MovieCardImageWrapper {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.MovieCardImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.MovieCardRelease, .MovieCardRating {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.MovieCardRating {
+  color: #8b8a8a;
+}
+
+.MovieCardRelease img {
+  width: 20px;
+  height: 20px;
+}

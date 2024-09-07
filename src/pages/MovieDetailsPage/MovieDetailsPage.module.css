@@ -1,0 +1,13 @@
+.MovieDetailsPage {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.MovieDetailsButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

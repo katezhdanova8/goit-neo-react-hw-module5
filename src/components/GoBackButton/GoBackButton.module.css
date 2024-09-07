@@ -1,0 +1,21 @@
+.GoBackButton {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid #3b0000;
+  color: #3b0000;
+}
+
+.GoBackButton img {
+  width: 20px;
+  height: 20px;
+}
+
+.GoBackButton:hover {
+  color: #ff6b08;
+}

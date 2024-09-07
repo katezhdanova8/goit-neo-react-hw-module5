@@ -1,0 +1,41 @@
+.MovieCastList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.MovieCastItem {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.MovieCastItem img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.MovieCastItem h3, 
+.MovieCastItem p {
+  --font-size: 16px;
+  --line-height: 1.2;
+  --line-clamp: 2;
+  margin: 0;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp);
+  line-clamp: var(--line-clamp);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: calc(var(--font-size) * var(--line-clamp) * var(--line-height));
+}
+
+.MovieCastItem p {
+  color: #969696;
+}
