@@ -1,9 +1,9 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import css from './App.module.css';
-import Navigation from './components/Navigation/Navigation';
 import { Toaster } from 'react-hot-toast';
+import Navigation from './components/Navigation/Navigation';
 import Loader from './components/Loader/Loader';
+import css from './App.module.css';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const MoviesPage = lazy(() => import('./pages/MoviesPage/MoviesPage'));
