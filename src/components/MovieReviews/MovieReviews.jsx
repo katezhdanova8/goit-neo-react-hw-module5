@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { fetchMovieReviews } from '../../api/api';
 import formatDate from '../../helpers/formatDate';
 import getImgSrc from '../../helpers/getImgSrc';
@@ -6,7 +7,8 @@ import Message from '../Message/Message';
 import Loader from '../Loader/Loader';
 import css from './MovieReviews.module.css';
 
-const MovieReviews = ({ movieId }) => {
+const MovieReviews = () => {
+  const { movieId } = useParams();
   const [movieReviews, setMovieReviews] = useState([]);
   const [loading, setLoading] = useState(false);
 

@@ -5,6 +5,7 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 import MovieList from '../../components/MovieList/MovieList';
 import Message from '../../components/Message/Message';
 import css from './MoviesPage.module.css';
+import { useSearchParams } from 'react-router-dom';
 
 const messages = {
   noMovies: 'No movies found',
@@ -13,34 +14,40 @@ const messages = {
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
-  const [filters, setFilters] = useState({ query: '' });
+  const [searchParams, setSearchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
+
+  const query = searchParams.get('query') || '';
 
   useEffect(() => {
     setMovies([]);
+    if (!query) return;
+    
     setLoading(true);
-    if (!filters.query) return setLoading(false);
-
-    fetchMovieSearch(filters)
+    fetchMovieSearch({ query })
       .then(({ results }) => setMovies(results))
       .catch(() => toast.error('Failed to load movies', { position: 'top-right' }))
       .finally(() => setLoading(false));
-  }, [filters]);
+  }, [query]);
+
+  const handleSearch = (newQuery) => {
+    setSearchParams({ query: newQuery });
+  };
 
   const showMessage = !movies.length && !loading;
 
   return (
     <div className={css.MoviesPage}>
-      <SearchBar onSearch={(query) => setFilters({ query })} />
+      <SearchBar onSearch={handleSearch} />
       <Loader visible={loading} />
 
       {movies.length > 0 && (
-        <MovieList movies={movies} fromLocation='/movies' />
+        <MovieList movies={movies} fromLocation={`/movies?query=${query}`} />
       )}
 
       {showMessage && (
         <Message>
-          {filters.query ? messages.noMovies : messages.enterMovieName}
+          {query ? messages.noMovies : messages.enterMovieName}
         </Message>
       )}
     </div>

@@ -18,6 +18,16 @@
   color: #3b0000;
 }
 
+.SearchBar__button {
+  background: transparent;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .SearchBar__input::placeholder {
   color: #b6b6b6;
 }

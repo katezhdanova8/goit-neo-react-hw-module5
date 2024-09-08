@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { fetchMovieCredits } from '../../api/api';
 import getImgSrc from '../../helpers/getImgSrc';
 import Message from '../Message/Message';
 import Loader from '../Loader/Loader';
 import css from './MovieCast.module.css';
 
-const MovieCast = ({ movieId }) => {
+const MovieCast = () => {
+  const { movieId } = useParams();
   const [movieCast, setMovieCast] = useState([]);
   const [loading, setLoading] = useState(false);
 
